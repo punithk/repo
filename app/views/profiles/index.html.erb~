@@ -1,0 +1,28 @@
+<h1>PROFILE OF <%=User.find(params[:user_id]).fname.capitalize %> <%=User.find(params[:user_id]).lname.capitalize %></h1>
+
+<table>
+  <tr>
+    <th>User</th>
+    <th>Address</th>
+    <th>Bloodgroup</th>
+    <th>Phone</th>
+    <th>Action</th>
+  </tr>
+
+<% @profiles.each do |profile| %>
+  <tr>
+    <td><%= profile.user_id %></td>
+    <td><%= profile.address %></td>
+    <td><%= profile.bloodgroup %></td>
+    <td><%= profile.phone %></td>
+    <td><%= link_to 'Show', users_path+"/"+params[:user_id]+"/profiles/"+profile.id.to_s %>|<%= link_to 'Edit', users_path+"/"+params[:user_id]+"/profiles/"+profile.id.to_s+"/edit" %>|<%= link_to 'Delete', profile, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+To add a new profile click 
+<%= link_to 'here', users_path+"/"+params[:user_id]+"/profiles/new" %>
+</br>
+To go back to user list click  
+<%=link_to 'here', users_path %>

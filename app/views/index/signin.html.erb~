@@ -1,0 +1,8 @@
+<h1>CREATE NEW USER</h1>
+<%= form_tag("/index/signin", method: "get") do %>
+  <%= label_tag(:fn, "FIRST NAME:") %>
+  <%= text_field_tag(:fn) %>
+  <%= label_tag(:ln, "LAST NAME:") %>
+  <%= text_field_tag(:ln) %>
+  <%= submit_tag("Submit") %>
+<% end %> 

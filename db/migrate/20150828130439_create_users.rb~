@@ -1,0 +1,13 @@
+class CreateUsers < ActiveRecord::Migration
+ has_many :photos
+  def change
+    create_table :users, id: false  do |t|
+      t.integer :uid , null: false
+      t.string :fname
+      t.string :lname
+
+      t.timestamps
+    end
+    execute %Q{ ALTER TABLE "users" ADD PRIMARY KEY ("uid"); }
+  end
+end

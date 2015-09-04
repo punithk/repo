@@ -1,0 +1,7 @@
+<h1>Editing profile</h1>
+<p id="notice" color="red"><%= notice %></p>
+
+<%= render 'form' %>
+
+<%= link_to 'Show', users_path+"/"+params[:user_id]+"/profiles/"+params[:user_id] %> |
+<%= link_to 'Back', users_path+"/"+params[:user_id]+"/profiles/" %>

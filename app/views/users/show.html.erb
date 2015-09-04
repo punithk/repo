@@ -1,0 +1,18 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>FIRST NAME:</b>
+  <%= @user.fname %>
+</p>
+
+<p>
+  <b>LAST NAME:</b>
+  <%= @user.lname %>
+</p>
+
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>
+</br>
+</br>
+<%= link_to 'Photos', user_path(@user)+"/photos" %>|<%= link_to 'Profile', user_path(@user)+"/profiles" %>
