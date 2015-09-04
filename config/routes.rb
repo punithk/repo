@@ -1,7 +1,7 @@
 Try::Application.routes.draw do
   resources :profiles
 
-
+  
   resources :photos
 
   
@@ -19,7 +19,7 @@ Try::Application.routes.draw do
     resources :profiles
     resources :photos
   end
-  
+  root :to => 'users#index'
  # resources :users do 
  #   resource :profiles
  # end
