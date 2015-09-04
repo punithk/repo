@@ -2,12 +2,14 @@
 
 <table>
   <tr>
+    <th>IMAGE</th>
     <th>URL</th>
     <th>ACTIONS</th>
   </tr>
 
 <% @photos.each do |photo| %>
   <tr>
+    <td><img src= "<%= "/data/"+photo.id.to_s+photo.url%>" style="max-height: 100px; max-width: 100px;" /></td>
     <td><%= photo.url %></td>
     <td><%= link_to 'Show', users_path+"/"+photo.user_id.to_s+"/photos/"+photo.id.to_s %>|<%#= link_to 'Edit', users_path+"/"+photo.user_id.to_s+"/photos/"+photo.id.to_s+"/edit"%><%= link_to 'Destroy', photo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
